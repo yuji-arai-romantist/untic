@@ -1,6 +1,4 @@
-# 19studio-wp
-[19Studio-official](https://github.com/Romantist-inc/19studio-official/)をWP環境の上で確認、編集する
-
+# UNTIC
 
 ## 必要なもの
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
