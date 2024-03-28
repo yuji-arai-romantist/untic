@@ -1,0 +1,86 @@
+@use "@global" as *;
+
+@use "@global" as *;
+
+#vue-app {
+  .article-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+    row-gap: 3rem;
+    &__item {
+    }
+
+    @include mq-down("md") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .article-item {
+    background-color: #fff; //$color-white;
+    border-radius: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+
+    &__image {
+      border-radius: 1rem;
+      overflow: hidden;
+      > img {
+        width: 100%;
+      }
+    }
+    &__text {
+      margin-top: 1rem;
+    }
+  }
+
+  .article-text {
+    &__category {
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 140%;
+      
+      @include mq-down(md) {
+        font-size: ss(24);
+        line-height: ss(36);
+      }
+    }
+    &__title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 140%;
+      margin: 0.5rem 0;
+
+      @include mq-down(md) {
+        font-size: ss(40);
+        margin: ss(10) 0 0;
+      }
+    }
+    &__capsule {
+      width: fit-content;
+      display: flex;
+      flex-direction: row;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #0095d5;
+      line-height: 1.8rem;
+
+      @include mq-down(md) {
+        font-size: ss(24);
+        line-height: ss(36);
+      }
+
+      .article-capsule {
+        background-color: #e2f5fc;
+        border-radius: 1rem;
+        padding: 0.1rem 0.5rem;
+        margin: 0.5rem 1.5rem 0 0;
+
+        @include mq-down(md) {
+          padding: ss(1) ss(10);
+          margin: ss(30) ss(15) 0 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@use "../global" as *;
+
+$header-h-sp: ss(100);
+$header-h-pc: 50px;
+
+#vue-app {
+  .l-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff; //$color-white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 10;
+
+    &__inner {
+      width: 100%;
+      max-width: $max-width-pc;
+      height: $header-h-sp;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5rem;
+
+      @include mq-up(md) {
+        height: $header-h-pc;
+      }
+      @include mq-down(md) {
+        padding: 0 ss(50) 0 ss(30);
+      }
+    }
+
+    &__logo {
+      > img {
+        height: 3rem;
+
+        @include mq-down(md) {
+          height: ss(60);
+        }
+      }
+    }
+
+    &__menu {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+
+      .menu-list {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 3rem;
+
+        @include mq-down(md) {
+          column-gap: ss(30);
+        }
+      }
+
+      @include mq-down(md) {
+        font-size: ss(24);
+      }
+    }
+  }
+}
+
+//WPのログインした時出る管理バーがheaderを隠す時
+.admin-bar {
+  #vue-app {
+    .l-header {
+      top: 32px;
+
+      @include mq-down(md) {
+        top: 46px;
+      }
+      @include mq-down(sm) {
+        position: sticky;
+        top: 0;
+        margin-bottom: ss(-100);
+      }
+    }
+  }
+}

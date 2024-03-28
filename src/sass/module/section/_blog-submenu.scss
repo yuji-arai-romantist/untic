@@ -1,0 +1,79 @@
+@use "@global" as *;
+
+#vue-app {
+  .submenu-list {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5.5rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+
+    @include mq-down("md") {
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
+      margin-bottom: ss(120);
+    }
+  }
+  .blog-submenu {
+    max-width: 35rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: 0.2rem solid #e4d4cb;
+    padding: 2rem;
+
+    @include mq-down("md") {
+      max-width: 100%;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 180%;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .category-list {
+    .category-item {
+      border-bottom: 0.1rem solid #3333331a;
+      text-indent: -1rem;
+      padding: 0.7rem 0 1.2rem 0;
+      margin: 0 1rem;
+
+      > a {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 180%;
+        margin-left: 1rem;
+      }
+    }
+    .category-item:first-child {
+      padding-top: 0;
+    }
+    .category-item:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+  }
+  .keyword-list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.7rem;
+
+    .keyword-item {
+      width: fit-content;
+      height: fit-content;
+      background: #e2f5fc;
+      border-radius: 8px;
+      padding: 0 1rem 0.2rem;
+
+      &__tag {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 180%;
+      }
+    }
+  }
+}

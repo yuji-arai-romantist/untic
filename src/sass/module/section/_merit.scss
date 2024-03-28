@@ -1,0 +1,101 @@
+@use "@global" as *;
+
+#vue-app {
+  .merit {
+    background-color: #0098d6; //$color-primary;
+    background-image: url("~@image/pattern_header.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 32px;
+    .wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      width: fit-content;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0 -280px -140px 0;
+      @include mq-down(lg) {
+        margin: 0 auto -80px auto;
+      }
+      .title {
+        position: relative;
+        color: #fff; //$color-white;
+        text-align: center;
+        margin: -150px 20px 0 0;
+        font-size: 16px;
+        @include mq-down(md) {
+          font-size: 1rem;
+          margin: -90px 0 0 20px;
+        }
+        > h1 {
+          font-size: 2.5em;
+          font-weight: 700;
+          margin: 0 auto;
+          line-height: 1.2;
+          > strong {
+            font-size: 1.25em;
+            font-weight: 700;
+            line-height: 1.2;
+          }
+        }
+      }
+      .model {
+        > img {
+          width: 260px;
+          margin: 0 auto;
+          @include mq-down(sm) {
+            width: 200px;
+            margin: 0 auto 0 -1em;
+          }
+        }
+      }
+    }
+    .body {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: stretch;
+      .card {
+        background-color: #fff; //$color-white;
+        border-radius: 10px;
+        width: calc((100% / 3) - 20px);
+        position: relative;
+        margin: 0 10px;
+        @include mq-down(lg) {
+          width: 100%;
+          max-width: 607px;
+          margin: 2vw 4vw;
+        }
+        .descript {
+          padding: 16px;
+          .summary {
+            color: #0098d6; //$text-primary;
+            font-size: 2.4rem;
+            font-weight: 700;
+          }
+          .detail {
+            font-size: 1.3rem;
+            margin-top: 1.3rem;
+          }
+        }
+        .photo {
+          img {
+            border-radius: 0 0 10px 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@use "@global" as *;
+
+#vue-app {
+  .blog-article {
+    background-image: linear-gradient(
+        180deg,
+        rgba(250, 234, 224, 0) 20%,
+        rgba(250, 234, 224, 1) 35%
+      ),
+      url("~@image/pattern_body.webp");
+    background-size: 100% auto, 100% auto;
+    background-position-y: 25%, auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 3rem;
+    margin: 0 auto;
+
+    @include mq-down(md) {
+      background-image: linear-gradient(
+          180deg,
+          rgba(250, 234, 224, 0) 5%,
+          rgba(250, 234, 224, 1) 20%
+        ),
+        url("~@image/pattern_body.webp");
+      font-size: 1rem;
+      padding-top: 3rem;
+    }
+
+    .title {
+      font-size: 6.4rem;
+      font-weight: 700;
+      line-height: 180%;
+      text-align: center;
+      @include mq-down(md) {
+        font-size: 4.8rem;
+      }
+    }
+
+    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .article-box {
+      background-color: #fff; //$color-white;
+      border-radius: 1rem;
+      border: 0.2rem solid #e4d4cb;
+      padding: 3rem;
+      margin: 3rem 2rem;
+
+      @include mq-down(md) {
+        padding: ss(20);
+      }
+
+      &__title {
+        font-size: 3.2rem;
+        font-weight: 600;
+        line-height: 180%;
+        margin-bottom: 2.5rem;
+
+        @include mq-down(md) {
+          font-size: ss(48);
+        }
+      }
+    }
+    .-popular {
+      background-image: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 20%,
+          rgb(255, 255, 255, 1) 35%
+        ),
+        url("~@image/pattern_body.webp");
+      background-size: cover, 100% auto;
+      background-position-y: 25%, auto;
+      background-repeat: no-repeat;
+    }
+    .-new {
+    }
+
+    .btn__small {
+      margin-bottom: 3rem;
+
+      @include mq-down(md) {
+        margin-bottom: ss(80);
+      }
+    }
+  }
+}

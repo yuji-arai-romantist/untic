@@ -1,0 +1,259 @@
+@use "@global" as *;
+
+#vue-app {
+  .nayami {
+    background-image: linear-gradient(
+        180deg,
+        rgba(250, 234, 224, 0) 20%,
+        rgba(250, 234, 224, 1) 35%
+      ),
+      url("~@image/pattern_body.webp");
+    background-size: 100% auto, 100% auto;
+    background-position-y: 25%, auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 30px;
+    @include mq-down(md) {
+      background-image: linear-gradient(
+          180deg,
+          rgba(250, 234, 224, 0) 5%,
+          rgba(250, 234, 224, 1) 20%
+        ),
+        url("~@image/pattern_body.webp");
+      font-size: 10px;
+      padding-top: 32px;
+      padding-bottom: 16px;
+    }
+    .header {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      > .leads {
+        color: #333; //$color-black;
+        font-weight: 700;
+        text-align: center;
+        line-height: 5rem;
+        > h1 {
+          font-size: 4rem;
+          margin-bottom: 12px;
+          line-height: 1.2;
+          > strong {
+            font-size: 8rem;
+            line-height: 1;
+            > span {
+              font-size: 4rem;
+            }
+          }
+        }
+      }
+      > .model {
+        width: 100%;
+        text-align: center;
+        > .picture {
+          width: 50%;
+          max-width: 300px;
+        }
+        > .icon {
+          margin: -140px 0 0 -40px;
+          width: 10%;
+          max-width: 65px;
+        }
+      }
+      > .points {
+        width: 90%;
+        max-width: 860px;
+        background-color: #fff; //$color-white;
+        border-radius: 15px;
+        border: 3px solid #e4d4cb;
+        font-size: min(max(8px, 2vw), 16px);
+        > div {
+          width: fit-content;
+          margin: 0 auto;
+          > p {
+            font-size: 2em;
+            font-weight: 700;
+            margin: 10px auto;
+            > img {
+              height: 1.5em;
+              margin-right: 1em;
+            }
+          }
+        }
+      }
+    }
+    .title {
+      width: 100%;
+      font-weight: 800;
+      text-align: center;
+      line-height: 4.5em;
+      margin: 4em auto;
+      > h1 {
+        font-size: 2.5em;
+        line-height: 1.2;
+        > strong {
+          font-size: 2em;
+          line-height: 1.2;
+        }
+      }
+    }
+    .body {
+      width: 860px;
+      background-color: #0098d6; //$color-primary;
+      border-radius: 15px;
+      color: #fff; //$color-white
+      text-align: center;
+      margin: 16px auto 48px auto;
+      padding-bottom: 32px;
+      @include mq-down(lg) {
+        width: 90%;
+        margin: 16px auto;
+      }
+      > .triangle {
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 50px 50px 0 50px;
+        border-color: #fff transparent transparent transparent;
+        transform: rotate(0deg);
+        margin: 0 auto;
+        @include mq-down(md) {
+          border-width: 30px 30px 0 30px;
+        }
+      }
+      > .leads {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 30px;
+        @include mq-down(sm) {
+          font-size: 12px;
+        }
+        > h1 {
+          font-size: 1.5em;
+          font-weight: 600;
+          > p {
+            margin-bottom: -3.5em;
+          }
+          > span {
+            font-size: 1.5em;
+            font-weight: 700;
+          }
+          > strong {
+            font-size: 4em;
+            font-weight: 700;
+            line-height: 1.2;
+            > ruby {
+              text-decoration: solid underline #2caee3 10px;
+              > rt {
+                font-size: 0.8em;
+              }
+            }
+            > span {
+              font-size: 0.5em;
+            }
+          }
+        }
+      }
+      > .checks {
+        width: 520px;
+        margin: 10px auto;
+        text-align: start;
+        font-size: 16px;
+        @include mq-down(md) {
+          width: 90%;
+          font-size: 9px;
+        }
+        > p {
+          background-color: #fff; //$color-white;
+          padding: 10px 25px;
+          margin: 10px auto;
+          color: #2a3d78;
+          font-size: 1.5em;
+          font-weight: 700;
+          @include mq-down(md) {
+            padding: 8px 20px;
+          }
+          > img {
+            height: 0.8em;
+            margin-right: 0.5em;
+          }
+        }
+        > .model {
+          width: 255px;
+          @include mq-down(md) {
+            width: 48%;
+          }
+          &_female {
+            margin-right: 10px;
+            @include mq-down(md) {
+              margin-right: 4%;
+            }
+          }
+        }
+      }
+      > .divider {
+        width: 580px;
+        height: 2px;
+        background-color: #fff; //$color-white;
+        margin: 50px auto;
+        @include mq-down(md) {
+          width: 93%;
+          margin: 35px auto;
+        }
+      }
+      > .merits {
+        width: 530px;
+        margin: 0 auto;
+        font-size: 16px;
+        @include mq-down(md) {
+          width: 90%;
+          font-size: 9px;
+        }
+        > h1 {
+          font-size: 2.5em;
+          font-weight: 700;
+          line-height: 1.2;
+          margin-top: -10px;
+          > strong {
+            font-size: 1.5em;
+            font-weight: 700;
+            text-decoration: solid underline #2caee3 10px;
+          }
+        }
+        > .article {
+          font-size: 1.5em;
+          text-align: start;
+          margin: 20px auto;
+        }
+      }
+      > .graph {
+        display: flex;
+        align-items: center;
+        width: 520px;
+        background-color: #fff; //$color-white;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 0 auto;
+        color: #000; //$color-black;
+        @include mq-down(md) {
+          width: 90%;
+        }
+        > img {
+          width: 200px;
+          margin-right: 20px;
+          @include mq-down(md) {
+            width: 35%;
+            margin-right: 10px;
+          }
+        }
+        > .article {
+          text-align: start;
+          font-weight: 500;
+          > span {
+            font-size: 2.4rem;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

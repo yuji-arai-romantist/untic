@@ -1,0 +1,159 @@
+@use "@global" as *;
+
+#vue-app {
+  .mv {
+    width: 100%;
+    .header {
+      background-color: #0098d6; //$color-primary;
+      background-image: url("~@image/lp1_pricetag_eclipse.webp"),
+        url("~@image/pattern_header.webp");
+      background-size: auto 180%, 100% auto;
+      background-position-y: 50%, 25%;
+      background-position-x: calc(50% - 104px), 50%;
+      background-repeat: no-repeat;
+      height: 25vw;
+      max-height: 170px;
+      min-height: 140px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      @include mq-down(sm) {
+        background-position-x: calc(50% - 87px), 50%;
+      }
+      > .pricetag {
+        margin-top: 20px;
+        @include mq-down(sm) {
+          margin-top: 13px;
+        }
+      }
+      > img {
+        height: 85%;
+        margin: auto 1rem;
+      }
+    }
+    .body {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      > .contents {
+        background-image: url("~@image/model_1.webp");
+        background-size: auto 100%;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1rem;
+        > .leads {
+          width: 90%;
+          margin: 1.5rem 0 0 2rem;
+        }
+        > .review {
+          width: 100%;
+          max-width: 900px;
+          display: flex;
+          justify-content: flex-end;
+          padding: 1vw 2vw;
+          > img {
+            width: 30%;
+          }
+        }
+        > .point {
+          background-color: #fff; //$color-white;
+          border-radius: 15px;
+          height: 30vw;
+          max-height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 1vw 1vw;
+          font-weight: 700;
+          &_busy {
+            width: 55%;
+            max-width: 440px;
+            > p {
+              font-size: max(min(4rem, 5vw), 2rem);
+              > img {
+                height: 1.1em;
+                margin: 0 0 5px 3px;
+              }
+            }
+            > .pillbox {
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: center;
+              align-items: center;
+              max-height: fit-content;
+              > div > .pill {
+                background-color: #2a3d78; //$color-primary-dark;
+                border-radius: 20vw;
+                width: 27vw;
+                max-width: 200px;
+                height: 8vw;
+                max-height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0.3em auto;
+                color: #fff; //$text-white;
+                font-size: 3rem;
+                font-weight: 700;
+                padding-bottom: 0.5rem;
+                @include mq-down(sm) {
+                  font-size: 5vw;
+                }
+              }
+              > p {
+                line-height: 0;
+                color: #0098d6; //$text-primary;;
+                font-family: "Barlow Semi Condensed";
+                font-size: max(min(14rem, 20vw), 8rem);
+                font-weight: 700;
+                margin: 0 auto 1vw 1vw;
+              }
+            }
+          }
+          &_kousei {
+            width: 40%;
+            max-width: 440px;
+            > .sub_detail {
+              text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+              font-size: 2.5rem;
+              margin-top: -20px;
+              @include mq-down(md) {
+                margin-top: -15px;
+                font-size: 3.2vw;
+              }
+            }
+            > .detail {
+              margin-top: -15px;
+              font-size: 3rem;
+              @include mq-down(md) {
+                margin-top: -10px;
+                font-size: 4vw;
+              }
+            }
+            > .visual {
+              width: 65%;
+              max-width: 200px;
+              margin-top: -6px;
+            }
+            > .disclaimer {
+              color: #ccc;
+              font-size: max(min(12px, 2vw), 0.8rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}

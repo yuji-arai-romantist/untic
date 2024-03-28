@@ -1,0 +1,10 @@
+@use "@global" as *;
+
+.vc-button {
+  button {
+    color: $color-type-a;
+    border: 1px $color-type-a solid;
+    padding: 0 20px;
+    margin: 20px 0;
+  }
+}
